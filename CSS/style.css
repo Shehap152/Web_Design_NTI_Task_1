@@ -1,0 +1,667 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Alegreya Sans", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --main-color: #8e7754;
+    --font-color: #686868;
+    --line-hight: 2;
+}
+
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+    /* margin-top: 70px; */
+    padding: 50px 0px;
+}
+
+/* ----------------------------------------------------- start Header Section ----------------------------------------- */
+
+.header {
+    min-height: 120vh;
+    background-image: url("../images/drew-coffman-1872.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.header * {
+    position: relative;
+    z-index: 2;
+}
+
+/* first fixed icon in side  */
+.fixed-side-nav {
+    width: 40px;
+    background-color: white;
+    position: fixed;
+    right: 0px;
+    top: 25%;
+    font-size: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    /* note that >> i will use the flex box In the things we did not study ( make icons in the center (Virtical and horizntal) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.fixed-side-nav i {
+    padding: 10px;
+    cursor: pointer;
+    color: var(--font-color);
+}
+
+.fixed-side-nav i::after {
+    content: attr(data);
+    position: absolute;
+    right: 50px;
+    background-color: white;
+    padding: 10px;
+    font-size: 10px;
+    width: 180px;
+    text-align: center;
+    border-radius: 10px;
+    display: none;
+}
+
+.fixed-side-nav i:first-of-type::after {
+    top: 5px;
+}
+
+.fixed-side-nav i:last-of-type::after {
+    bottom: 5px;
+}
+
+.fixed-side-nav i:hover {
+    color: rgb(0, 174, 255);
+}
+
+.fixed-side-nav i:hover::after {
+    display: block;
+    color: black;
+}
+
+/* second : nav bar section  */
+.nav-bar {
+    min-height: 10vh;
+    width: 100%;
+    padding: 20px 10%;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    /* ------ test --------  */
+    /* position: sticky;
+    top: -20px;
+    left: 0; */
+
+    z-index: 100;
+}
+
+.nav-bar>.logo {
+    display: inline-block;
+    width: 20%;
+}
+
+.nav-bar img {
+    width: 150px;
+    height: 50px;
+}
+
+.nav-bar ul {
+    list-style: none;
+    float: right;
+}
+
+.nav-bar ul li {
+    display: inline-block;
+    margin: 0px 10px;
+    padding: 15px 0px;
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    color: var(--main-color);
+    font-size: 22px;
+}
+
+.clr {
+    clear: both;
+}
+
+.bar {
+    display: none;
+}
+
+/* Third : home section  */
+.home .info {
+    padding: 80px;
+    margin: 50px auto;
+    text-align: center;
+    color: white;
+}
+
+.home .info p {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.home .info h1 {
+    margin: 20px 0px;
+    font-size: 60px;
+    font-family: "Alegreya";
+}
+
+.home .info .buttons {
+    margin: 20px 0px;
+}
+
+.home .info .buttons button {
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 20px 30px;
+    margin: 10px 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.home .info .buttons button:first-child {
+    background-color: var(--main-color);
+}
+
+.home .info .buttons button:last-child {
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+.home .info .buttons button:hover {
+    background-color: white;
+    color: black;
+}
+
+/* ----------------------------------------------------- End Header Section ----------------------------------------- */
+/* ----------------------------------------------------- Start About Section ----------------------------------------- */
+.about .image {
+    width: 45%;
+    float: left;
+}
+
+.about .header-link {
+    display: inline-block;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    border: 1px solid white;
+}
+
+.about .header-link a {
+    color: white;
+}
+
+.about .image img {
+    width: 100%;
+    height: 500px;
+}
+
+.about .info,
+.contact-information .container .info {
+    width: 50%;
+    float: right;
+}
+
+.about .info h2,
+.location .text h2,
+.contact-information .container .info h2 {
+    padding: 20px 0px;
+    font-size: 30px;
+}
+
+.about .info>p,
+.contact-information .container .info>p {
+    padding: 20px 0px;
+    line-height: var(--line-hight);
+    color: var(--font-color);
+}
+
+.about .info ul,
+.contact-information .container .info ul {
+    width: 100%;
+    list-style: none;
+    float: left;
+}
+
+.about .info ul li,
+.contact-information .container .info ul li {
+    padding-bottom: 20px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.about .info ul li>div,
+.contact-information .container .info ul li>div {
+    width: 40px;
+    height: 40px;
+    float: left;
+    border: 1px solid var(--main-color);
+    border-radius: 50%;
+}
+
+.about .info ul li>div img,
+.contact-information .container .info ul li>div img {
+    width: 100%;
+    height: 100%;
+}
+
+.about .info ul li p,
+.contact-information .container .info ul li p {
+    display: inline-block;
+    width: 80%;
+    padding: 10px;
+    font-size: 18px;
+    color: var(--font-color);
+}
+
+/* ----------------------------------------------------- End About Section ----------------------------------------- */
+/* ----------------------------------------------------- Start Location Section ------------------------------------ */
+.location {
+    background-color: #f8f8f8;
+}
+
+.location .container .text {
+    float: left;
+    width: 45%;
+    margin-top: 50px;
+}
+
+.location .image {
+    float: right;
+    width: 45%;
+    height: 450px;
+}
+
+.location .image img {
+    width: 100%;
+    height: 100%;
+}
+
+.location .text p {
+    padding-bottom: 20px;
+    color: var(--font-color);
+    line-height: var(--line-hight);
+}
+
+/* ----------------------------------------------------- End About Section ----------------------------------------- */
+/* ----------------------------------------------------- Start Baking Section --------------------------------------- */
+.baking .text {
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.baking .text h2 {
+    font-size: 30px
+}
+
+.baking .text p {
+    padding-top: 20px;
+    color: var(--font-color);
+}
+
+.products {
+    width: 80%;
+    margin: auto;
+}
+
+.products .items {
+    width: 33.33%;
+    float: left;
+    padding: 20px;
+}
+
+.products .items .inner {
+    padding: 10px;
+    text-align: center;
+}
+
+.clr {
+    clear: both;
+}
+
+.products img {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.products p {
+    padding: 5px;
+    margin: 20px 0px;
+    line-height: var(--line-hight);
+    color: var(--font-color);
+}
+
+/* ----------------------------------------------------- End Baking Section ----------------------------------------- */
+/* ----------------------------------------------------- Start Contact information Section -------------------------- */
+.contact-information {
+    background-color: #f8f8f8;
+    padding: 50px 0px;
+}
+
+.contact-information .container .info {
+    float: left;
+}
+
+.contact-information .container .info ul li>div {
+    background-color: var(--main-color);
+}
+
+.map {
+    width: 45%;
+    float: right;
+    height: 500px;
+    position: relative;
+}
+
+.map iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.map::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.map .google-message {
+    width: 80%;
+    height: 35%;
+    background-color: white;
+    position: absolute;
+    top: 5px;
+    left: 10%;
+    z-index: 1;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.map .google-message h3,
+.map .google-message p {
+    margin-bottom: 20px;
+}
+
+.map .google-message .form {
+    background-color: #f8f8f8;
+    border: 1px solid #cecece;
+    width: 100%;
+}
+
+.map .google-message .form a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+.map .google-message .form a:first-child {
+    display: inline-block;
+    width: 85%;
+    padding: 10px;
+    border: none;
+    border-right: 1px solid #cecece;
+    color: var(--font-color);
+}
+
+.map .google-message a:last-child {
+    text-align: center;
+    color: blue;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+/* ----------------------------------------------------- End Contact information Section ---------------------------- */
+/* ----------------------------------------------------- End footer Section ---------------------------- */
+.footer .main-section {
+    background-color: #403d38;
+    color: var(--font-color);
+}
+
+.footer .main-section .container .text {
+    float: left;
+    width: 25%;
+    padding: 15px;
+    min-height: 350px;
+}
+
+.footer .container .text .inner {
+    width: 100%;
+    height: 100%;
+}
+
+.footer .main-section .container .text h3 {
+    color: white;
+    font-size: 20px;
+    margin: 20px 0px;
+}
+
+.footer .main-section .container .text ul {
+    list-style: none;
+}
+
+.footer .main-section .container .text ul li {
+    padding: 15px 0px;
+    border-bottom: 1px solid var(--font-color);
+}
+
+.footer .main-section .container .text ul li:last-of-type {
+    border-bottom: none;
+}
+
+.footer .main-section .container .text ul li .hover-link {
+    transition: all .5s;
+    cursor: pointer;
+}
+
+.footer .main-section .container .text ul li .hover-link:hover {
+    color: white;
+}
+
+.footer .main-section .container .text ul li i {
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.footer .main-section .container .text ul li span {
+    font-size: 14px;
+}
+
+.footer .main-section .container .text .inner>p {
+    line-height: var(--line-hight);
+    font-size: 14px;
+}
+
+.footer .main-section .container .text .inner>p:first-of-type {
+    padding-bottom: 30px;
+}
+
+.footer .last-section {
+    background-color: #353330;
+}
+
+.footer .last-section .contact {
+    text-align: center;
+    margin: 0px auto;
+    color: var(--font-color);
+    padding: 25px;
+}
+
+.footer .last-section .contact p {
+    padding: 25px 0px;
+}
+
+.footer .last-section .contact ul {
+    list-style: none;
+}
+
+.footer .last-section .contact ul li {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .5s;
+    background-color: #403d38;
+}
+
+.footer .last-section .contact ul li:hover {
+    color: white;
+}
+
+.footer .last-section .contact ul .facebook:hover {
+    background-color: rgb(0, 68, 255);
+}
+
+.footer .last-section .contact ul .google:hover {
+    background-color: #fe6c61;
+}
+
+.footer .last-section .contact ul .linked-in:hover {
+    background-color: #0e72a3;
+}
+
+.footer .last-section .contact ul .twitter:hover {
+    background-color: #4cadc9;
+}
+
+/* ----------------------------------------------------- End footer Section ---------------------------- */
+
+/*-------------------------------------------------------  Media Query ---------------------------------------------- */
+@media screen and (max-width : 1200px) and (min-width : 992px) {}
+
+@media screen and (max-width : 991px) and (min-width : 768px) {}
+
+@media screen and (max-width : 767px) and (min-width : 600px) {}
+
+/* Special Media Query for the nav bar  */
+@media screen and (max-width : 992px) {
+    .bar {
+        display: block;
+        color: black;
+        font-size: 30px;
+        cursor: pointer;
+        float: right;
+        padding: 10px 0px;
+    }
+
+    .nav-bar ul {
+        top: 0px;
+        left: 0;
+        background-color: white;
+        width: 100%;
+        transition: height 1s;
+        height: 0px;
+        overflow: hidden;
+        display: block;
+    }
+
+    .nav-bar ul li {
+        display: block;
+        padding-left: 15px;
+        border-top: 1px solid var(--main-color);
+    }
+
+    .nav-bar ul li a {
+        color: black;
+    }
+
+    .bar:hover~.links {
+        height: 400px;
+    }
+
+    .map .google-message h3 {
+        font-size: 16px;
+    }
+
+    .map .google-message p {
+        font-size: 12px;
+    }
+
+    .map .google-message .form a {
+        font-size: 10px;
+    }
+
+    .footer .main-section .container .text {
+        float: none;
+        width: 100%;
+    }
+}
+
+/* Special Media Query for the home section  */
+@media screen and (max-width : 768px) {
+    .header {
+        height: 100vh;
+    }
+
+    .home .info h1 {
+        font-size: 40px;
+    }
+
+    .home .info p {
+        font-size: 16px;
+    }
+
+    .home .info .buttons button {
+        border-radius: 5px;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .about .image,
+    .location .image,
+    .contact-information .container .map {
+        width: 100%;
+        display: block;
+    }
+
+    .about .info,
+    .location .container .text,
+    .contact-information .container .info {
+        width: 100%;
+        display: block;
+    }
+
+    .products .items {
+        width: 100%;
+    }
+}
